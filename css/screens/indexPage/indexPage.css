@@ -1,0 +1,194 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+
+/* 1rem == 16px */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Variables navBar */
+  --navBar-Color: rgba(248, 248, 248, 0.733);
+
+  /* Variables icon */
+  --icon-Color: rgb(12, 69, 110);
+  --icon-Size: 36px;
+
+  /* Variables Normal Button */
+  --heigth-NormalButton: 80px;
+  --width-NormalButton: 140px;
+  --fontColor-NormalButton: rgb(255, 255, 255);
+  --textAlign-NormalButton: center;
+  --borderRadius-NormalButton: 20px;
+  --textTransform-NormalButton: uppercase;
+  --fontSize-NormalButton: 25px;
+  --letterSpacing-NormalButton: 2.5px;
+
+  /* Variables Button Not Pressed */
+  --background-ButtonNotPressed: linear-gradient(
+    to top,
+    rgb(12, 69, 110),
+    rgb(51, 102, 150)
+  );
+  --fontColor-ButtonNotPressed: rgb(255, 255, 255);
+
+  /* Variables Button Pressed */
+  --background-ButtonPressed: linear-gradient(
+    to top,
+    rgba(12, 110, 12, 0.418),
+    rgba(132, 202, 156, 0.418)
+  );
+  --fontColor-ButtonPressed: rgb(26, 26, 26);
+}
+
+body {
+  position: relative;
+}
+
+#header {
+  height: 100px;
+  background: url("/images/Technoflex\ 214x76.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  /* border: rgb(97, 97, 97) solid 0.2mm; */
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 0px 10px;
+  position: relative;
+}
+
+.screenTitle {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+
+/* Animation and Control navBar */
+/* Position absolute it will look for the closest position relative to take your position*/
+
+#navBar {
+  height: 80vh;
+  width: 100px;
+  padding: 25px 25px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+  transition: all 1s;
+}
+
+#navBar:hover {
+  background: var(--navBar-Color);
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.54);
+}
+
+#navElement {
+  margin-top: 20px;
+  transition: all 0.5s;
+}
+
+#navElement:hover {
+  transform: translateX(2px);
+}
+
+/* icon Animation */
+
+#iconNavBar {
+  color: var(--icon-Color);
+  font-size: var(--icon-Size);
+}
+
+#iconNavBar:hover {
+  font-size: 50px;
+}
+
+/* Animation and Control layout */
+
+#layout {
+  height: 80vh;
+  width: calc(100vw - 100px);
+  background: rgb(201, 197, 197);
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+  left: 100px;
+  padding: 20px;
+}
+
+/* ----------------------------------------------------------------------- */
+/* Animation and Control Button */
+/* ----------------------------------------------------------------------- */
+
+#start-button {
+  height: var(--heigth-NormalButton);
+  width: var(--width-NormalButton);
+  text-align: var(--textAlign-NormalButton);
+  line-height: calc(var(--heigth-NormalButton) * 0.95);
+  text-transform: var(--textTransform-NormalButton);
+  font-size: var(--fontSize-NormalButton);
+  letter-spacing: var(--letterSpacing-NormalButton);
+  border-radius: var(--borderRadius-NormalButton);
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* animation: button-pressed 2s linear infinite; */
+}
+
+#stop-button {
+  height: var(--heigth-NormalButton);
+  width: var(--width-NormalButton);
+  text-align: var(--textAlign-NormalButton);
+  line-height: calc(var(--heigth-NormalButton) * 0.95);
+  text-transform: var(--textTransform-NormalButton);
+  font-size: var(--fontSize-NormalButton);
+  letter-spacing: var(--letterSpacing-NormalButton);
+  border-radius: var(--borderRadius-NormalButton);
+  position: absolute;
+  top: 20px;
+  left: 170px;
+}
+
+/* Animation for buttons  */
+
+.not-pressed {
+  background: var(--background-ButtonNotPressed);
+  color: var(--fontColor-ButtonNotPressed);
+}
+
+#pressed {
+  height: var(--heigth-NormalButton);
+  width: var(--width-NormalButton);
+  background: var(--background-ButtonPressed);
+  color: var(--fontColor-ButtonPressed);
+  border-radius: var(--borderRadius-NormalButton);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation: button-pressed 1s linear infinite;
+}
+
+@keyframes button-pressed {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/* Animation and Control alarmWindow */
+
+#alarmWindow {
+  height: calc((100vh - 100px) - 80vh);
+  width: 100%;
+  position: relative;
+  background: gray;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Animation for buttons  */
